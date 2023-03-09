@@ -15,6 +15,7 @@
 }
 
 body {
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   background-color: var(--very-light-gray);
@@ -65,10 +66,16 @@ p, button {
 }
 
 button {
+  cursor: pointer;
   background-color: var(--very-light-gray);
-  border: none;
+  border: solid transparent 2px;
   padding: 1em 2.4em 1em 2.4em;
   border-radius: 2em;
+}
+
+button:hover {
+  border: solid var(--very-light-gray) 2px;
+  background-color: transparent;
 }
 
 .container-1 > button {
@@ -81,4 +88,35 @@ button {
 
 .container-3 > button {
   color: var(--very-dark-cyan);
+}
+
+.container-1 > button:hover {
+  color: var(--very-light-gray);
+}
+
+.container-2 > button:hover {
+  color: var(--very-light-gray);
+}
+
+.container-3 > button:hover {
+  color: var(--very-light-gray);
+}
+
+@media (min-width: 500px) {
+  body {
+    align-items: center;
+  }
+
+  main {
+    width: auto;
+    display: flex;
+  }
+
+  .container-1, .container-2, .container-3 {
+    width: 20em;
+  }
+
+  button {
+    margin-top: 4em;
+  }
 }
